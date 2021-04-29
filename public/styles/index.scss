@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Karantina-Bold';
+    src: local('Karantina-Bold'), url(./fonts/Karantina/Karantina-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: local('Roboto-Medium'), url(./fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto-Medium';
+    background-color: #01000c;
+    color: #A39013;
+}
+
+.container {        
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 100%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    // border: 10px grey solid;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 80%;
+    // border:10px solid rgb(79, 100, 1);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-title {    
+	background: none;
+    border: none;
+    color: inherit;
+    // border: 10px pink solid;
+    font-family: "Karantina-Bold";
+    font-size: 13vw;
+    text-decoration: underline 0.04em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 800ms;
+}
+
+.main-title:hover {
+    cursor:default;
+    text-decoration-color: #A39013;
+}
+
+.sidebar {
+    flex-basis: 10%;
+    // border:10px solid brown;
+    text-align: center;
+    padding: 200px 0;    
+    font-size: 20px;
+}
+
+.jobs {
+    // border: 10px red solid;
+    text-align: center;
+    font-size: 40px;
+}
+
+@media screen and (max-width:1215px ) {
+    .main-section {
+        flex-basis: 100%;
+        margin-top: 10vh;
+    }
+    .sidebar {
+        flex-basis: 50%;
+        order: 1;
+    }
+    .sidebar {        
+        font-size: 2vw;
+        padding: 0px;
+    }
+    .jobs {
+        font-size: 4vw;
+    }
+}

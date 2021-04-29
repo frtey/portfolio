@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Karantina-Bold';
+  src: local("Karantina-Bold"), url(./fonts/Karantina/Karantina-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: local("Roboto-Medium"), url(./fonts/Roboto/Roboto-Medium.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto-Medium';
+  background-color: #01000c;
+  color: #A39013;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-title {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: "Karantina-Bold";
+  font-size: 13vw;
+  -webkit-text-decoration: underline 0.04em rgba(255, 255, 255, 0);
+          text-decoration: underline 0.04em rgba(255, 255, 255, 0);
+  -webkit-transition: -webkit-text-decoration-color 800ms;
+  transition: -webkit-text-decoration-color 800ms;
+  transition: text-decoration-color 800ms;
+  transition: text-decoration-color 800ms, -webkit-text-decoration-color 800ms;
+}
+
+.main-title:hover {
+  cursor: default;
+  -webkit-text-decoration-color: #A39013;
+          text-decoration-color: #A39013;
+}
+
+.sidebar {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  text-align: center;
+  padding: 200px 0;
+  font-size: 20px;
+}
+
+.jobs {
+  text-align: center;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1215px) {
+  .main-section {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 10vh;
+  }
+  .sidebar {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .sidebar {
+    font-size: 2vw;
+    padding: 0px;
+  }
+  .jobs {
+    font-size: 4vw;
+  }
+}
+/*# sourceMappingURL=index.css.map */

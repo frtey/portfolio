@@ -1,0 +1,18 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./public/scripts/App.js",
+  "scripts": {
+    "start": "live-server --port=3000 --mount=/public:./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "particles.js": "^2.0.0",
+    "scss": "^0.2.4"
+  }
+}
