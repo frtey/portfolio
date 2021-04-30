@@ -6,19 +6,31 @@
 <link rel="stylesheet" type="text/css" href="styles/index.css">
 
 <body>
-    <div id="particles-js"></div>
-    <div class="container">
-        <aside class="sidebar">
-            <a href="#">Biographie</a>
-        </aside>
-        <section class="main-section">
-            <button class="main-title">MATHIEU KERHERVE</button>
-            <p class="jobs">Développeur web</p>
-        </section>
-        <aside class="sidebar secondary">
-            <a href="#">Projets</a>
-        </aside>
+    <div id="particles-js" class="particle-canvas"></div>
+    <div id="pt-main" class="pt-perspective">
+        
+
+        <div class="container pt-page pt-page-1"> <!-- TODO: Utiliser selecteur de classe pour ouger le bloc entier -->
+            <aside class="sidebar">
+                <button class="pt-toLeft-button">Biographie</button>
+            </aside>
+            <section class="main-section">
+                <button class="main-title">MATHIEU KERHERVE</button>
+                <p class="jobs">Développeur web</p>
+            </section>
+            <aside class="sidebar secondary">
+                <button class="pt-toRight-button">Projets</button>
+            </aside>
+        </div>
+
+
+        <!-- <div class="container pt-page pt-page-2">
+            <h1>TEST NEW PAGE</h1>
+        </div> -->
+
+
     </div>
+    
 
     
     <script type="text/javascript" src="./particles.js"></script>

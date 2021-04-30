@@ -1,3 +1,6 @@
+$primary-color: #01000c;
+$secondary-color: #A39013;
+
 @font-face {
     font-family: 'Karantina-Bold';
     src: local('Karantina-Bold'), url(./fonts/Karantina/Karantina-Bold.ttf) format('truetype');
@@ -16,8 +19,12 @@
 
 body {
     font-family: 'Roboto-Medium';
-    background-color: #01000c;
-    color: #A39013;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+.particle-canvas{
+    height: 28.375vw !important;
 }
 
 .container {        
@@ -42,26 +49,23 @@ body {
     // border:10px solid rgb(79, 100, 1);
 }
 
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.main-title {    
+button {    
 	background: none;
     border: none;
     color: inherit;
-    // border: 10px pink solid;
-    font-family: "Karantina-Bold";
-    font-size: 13vw;
     text-decoration: underline 0.04em rgba(255, 255, 255, 0);
     transition: text-decoration-color 800ms;
 }
 
-.main-title:hover {
+button:hover {
     cursor:default;
-    text-decoration-color: #A39013;
+    text-decoration-color: $secondary-color;
+}
+
+.main-title {    
+    // border: 10px pink solid;
+    font-family: "Karantina-Bold";
+    font-size: 13vw;
 }
 
 .sidebar {
@@ -69,13 +73,28 @@ a {
     // border:10px solid brown;
     text-align: center;
     padding: 200px 0;    
+}
+
+.sidebar button {
     font-size: 20px;
+    border: $secondary-color solid 1px;
+    padding: 8px 16px;
+    border-radius: 3px;
+}
+
+.sidebar button:hover {
+    cursor: pointer;
 }
 
 .jobs {
     // border: 10px red solid;
     text-align: center;
     font-size: 40px;
+    margin-top: 5px; 
+}
+
+.particle-canvas {
+    height: 99.68vh !important;
 }
 
 @media screen and (max-width:1215px ) {
@@ -86,11 +105,14 @@ a {
     .sidebar {
         flex-basis: 50%;
         order: 1;
-    }
-    .sidebar {        
         font-size: 2vw;
         padding: 0px;
     }
+    
+    .sidebar button {
+        font-size: 2vh;
+    }
+
     .jobs {
         font-size: 4vw;
     }
