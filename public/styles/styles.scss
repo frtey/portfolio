@@ -49,6 +49,11 @@ body {
     // border:10px solid rgb(79, 100, 1);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 button {    
 	background: none;
     border: none;
@@ -75,7 +80,7 @@ button:hover {
     padding: 200px 0;    
 }
 
-.sidebar button {
+.sidebar a {
     font-size: 20px;
     border: $secondary-color solid 1px;
     padding: 8px 16px;
@@ -97,7 +102,7 @@ button:hover {
     height: 99.68vh !important;
 }
 
-@media screen and (max-width:1215px ) {
+@media screen and (max-width:1300px ) {
     .main-section {
         flex-basis: 100%;
         margin-top: 10vh;
@@ -109,7 +114,7 @@ button:hover {
         padding: 0px;
     }
     
-    .sidebar button {
+    .sidebar a {
         font-size: 2vh;
     }
 
