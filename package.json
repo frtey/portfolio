@@ -4,15 +4,26 @@
   "description": "",
   "main": "./public/scripts/App.js",
   "scripts": {
-    "start": "live-server --port=3000 --mount=/public:./index.html"
+    "start": "webpack serve",
+    "test": "echo \"Error: no test specified\" & exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
     "express": "^4.17.1",
     "live-server": "^1.2.1",
     "particles.js": "^2.0.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.36.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

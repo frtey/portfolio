@@ -113,6 +113,19 @@ button:hover {
   height: 99.68vh !important;
 }
 
+.barba-once {
+  opacity: 0;
+}
+
+.barba-once-active {
+  -webkit-transition: opacity 10s linear 0.3s;
+  transition: opacity 10s linear 0.3s;
+}
+
+.barba-to {
+  opacity: 1;
+}
+
 @media screen and (max-width: 1300px) {
   .main-section {
     -ms-flex-preferred-size: 100%;
@@ -135,4 +148,4 @@ button:hover {
     font-size: 4vw;
   }
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=styles.css.map */

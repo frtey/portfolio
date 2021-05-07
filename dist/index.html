@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <meta charset="UTF-8">
 <title>Portfolio - Mathieu Kerhervé</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
-<body>
+<body data-barba="wrapper">
     <div id="particles-js" class="particle-canvas"></div>
 
-    <div class="container">
+    <main class="container" data-barba="container" data-barba-namespace="home">
         <aside class="sidebar">
             <a href="./bio.html">Biographie</a>
         </aside>
@@ -19,12 +19,13 @@
         <aside class="sidebar secondary">
             <a href="#">Projets</a>
         </aside>
-    </div>
+    </main>
 
 
     
-    <script type="text/javascript" src="./particles.js"></script>
-    <script type="text/javascript" src="app.js"></script>    
+    <script type="text/javascript" src="bundle.js"></script>    
+    <script type="text/javascript" src="./js/particles.js"></script>
+    <script type="text/javascript" src="./js/particles_load.js"></script>    
 </body>
 
 
