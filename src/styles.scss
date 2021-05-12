@@ -3,12 +3,12 @@ $secondary-color: #A39013;
 
 @font-face {
     font-family: 'Karantina-Bold';
-    src: local('Karantina-Bold'), url(./fonts/Karantina/Karantina-Bold.ttf) format('truetype');
+    src: local('Karantina-Bold'), url(./styles/fonts/Karantina/Karantina-Bold.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto-Medium';
-    src: local('Roboto-Medium'), url(./fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+    src: local('Roboto-Medium'), url(./styles/fonts/Roboto/Roboto-Medium.ttf) format('truetype');
 }
 
 * {
