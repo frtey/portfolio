@@ -5,25 +5,29 @@
   "main": "./public/scripts/App.js",
   "scripts": {
     "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" & exit 1"
+    "watch": "webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build-dev": "webpack",
+    "clean": "rmdir /s dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@barba/core": "^2.9.7",
-    "@barba/css": "^2.1.15",
-    "express": "^4.17.1",
-    "live-server": "^1.2.1",
-    "particles.js": "^2.0.0",
-    "scss": "^0.2.4",
-    "webpack-cli": "^4.7.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
     "babel-loader": "^8.2.2",
-    "webpack": "^5.36.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "html-loader": "^2.1.2",
+    "node-sass": "^6.0.0",
+    "particles.js": "^2.0.0",
+    "sass-loader": "^11.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   }
 }
