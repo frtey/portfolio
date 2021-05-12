@@ -1,6 +1,13 @@
 import barba from "@barba/core";
 import barbaCss from '@barba/css';
 import "./styles.scss";
+import "./js/particles";
+
+const particlesJS = window.particlesJS;
+
+particlesJS.load('particles-js', './particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
 barba.use(barbaCss);
 
