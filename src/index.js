@@ -1,41 +1,58 @@
 import barba from "@barba/core";
-import barbaCss from '@barba/css';
 import "./styles.scss";
 import "./js/particles";
-
-// if (module.hot) {
-//   // Capture hot update
-//   module.hot.accept("./index", () => {
-//     const nextComponent = component();
-
-//     // Replace old content with the hot loaded one
-//     document.body.replaceChild(nextComponent, demoComponent);
-
-//     demoComponent = nextComponent;
-//   });
-// }
+import { gsap } from "gsap";
 
 const particlesJS = window.particlesJS;
 
-particlesJS.load('particles-js', './particles.json', function() {
-  console.log('callback - particles.js config loaded');
+particlesJS.load("particles-js", "./particles.json", function () {
+  console.log("callback - particles.js config loaded");
 });
 
-barba.use(barbaCss);
-
 barba.init({
+  // debug: true,
   transitions: [
     {
-      beforeOnce() {
-        console.log("Befre Once")
+      name: "toRightTransition",
+      from: {
+        namespace: [
+          "index",
+          "projects"
+        ]
       },
-      once(){
-        console.log('Once')
+      to: {
+        namespace: [
+          "index",
+          "bio"
+        ]
       },
-      afterOnce() {
-        console.log("After Once")
-      }
-
-    }
-  ]
+      leave(data) {
+        return gsap.to(data.current.container, { duration: .3, x: window.innerWidth, ease: "power4" });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, { duration: .3, x: -window.innerWidth, ease: "power4" });
+      },
+    },
+    {
+      name: "toLeftTransition",
+      from: {
+        namespace: [
+          "bio",
+          "index"
+        ]
+      },
+      to: {
+        namespace: [
+          "index",
+          "projects"
+        ]
+      },
+      leave(data) {
+        return gsap.to(data.current.container, { duration: .3, x: -window.innerWidth, ease: "power4" });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, { duration: .3, x: window.innerWidth, ease: "power4" });
+      },
+    },
+  ],
 });
