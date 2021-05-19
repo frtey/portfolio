@@ -14,16 +14,19 @@ barba.init({
   transitions: [
     {
       name: "toRightTransition",
+      // sync: true,
       from: {
         namespace: [
+          "bio",
           "index",
           "projects"
         ]
       },
       to: {
         namespace: [
-          "index",
-          "bio"
+          "projects",
+          "bio",
+          "index"
         ]
       },
       leave(data) {
@@ -35,16 +38,19 @@ barba.init({
     },
     {
       name: "toLeftTransition",
+      // sync: true,
       from: {
         namespace: [
           "bio",
-          "index"
+          "index",
+          "projects"
         ]
       },
       to: {
         namespace: [
           "index",
-          "projects"
+          "projects",
+          "bio"
         ]
       },
       leave(data) {
