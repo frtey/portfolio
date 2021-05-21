@@ -68,6 +68,11 @@ button:hover {
     text-decoration-color: $secondary-color;
 }
 
+.next-page-link:hover {
+    background-color: $secondary-color;  
+    color: $primary-color;  
+}
+
 .main-title {    
     // border: 10px pink solid;
     font-family: "Karantina-Bold";
@@ -106,6 +111,7 @@ button:hover {
 .tech-logo {
     width: 60px;
     height: 60px;
+    border-radius: 30px;
 }
 
 @media screen and (max-width:1300px ) {

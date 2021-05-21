@@ -15,49 +15,55 @@ barba.init({
     {
       name: "toRightTransition",
       // sync: true,
-      from: {
-        namespace: [
-          "bio",
-          "index",
-          "projects"
-        ]
+
+      custom: ({ trigger }) => {
+        return (
+          trigger.classList &&
+          trigger.classList.contains("left-to-right")
+        );
       },
-      to: {
-        namespace: [
-          "projects",
-          "bio",
-          "index"
-        ]
-      },
+
       leave(data) {
-        return gsap.to(data.current.container, { duration: .3, x: window.innerWidth, ease: "power4" });
+        return gsap.to(data.current.container, {
+          duration: 0.3,
+          x: window.innerWidth,
+          ease: "power4",
+        });
       },
+
       enter(data) {
-        return gsap.from(data.next.container, { duration: .3, x: -window.innerWidth, ease: "power4" });
+        return gsap.from(data.next.container, {
+          duration: 0.3,
+          x: -window.innerWidth,
+          ease: "power4",
+        });
       },
     },
     {
       name: "toLeftTransition",
       // sync: true,
-      from: {
-        namespace: [
-          "bio",
-          "index",
-          "projects"
-        ]
+
+      custom: ({ trigger }) => {
+        return (
+          trigger.classList &&
+          trigger.classList.contains("right-to-left")
+        );
       },
-      to: {
-        namespace: [
-          "index",
-          "projects",
-          "bio"
-        ]
-      },
+
       leave(data) {
-        return gsap.to(data.current.container, { duration: .3, x: -window.innerWidth, ease: "power4" });
+        return gsap.to(data.current.container, {
+          duration: 0.3,
+          x: -window.innerWidth,
+          ease: "power4",
+        });
       },
+
       enter(data) {
-        return gsap.from(data.next.container, { duration: .3, x: window.innerWidth, ease: "power4" });
+        return gsap.from(data.next.container, {
+          duration: 0.3,
+          x: window.innerWidth,
+          ease: "power4",
+        });
       },
     },
   ],
