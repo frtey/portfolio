@@ -8,8 +8,13 @@ $acc-color: #AB1F72;
 }
 
 @font-face {
-    font-family: 'Roboto-Medium';
-    src: local('Roboto-Medium'), url(./styles/fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+    font-family: 'Lato-Regular';
+    src: local('Lato-Regular'), url(./styles/fonts/Lato/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: local('Lato-Bold'), url(./styles/fonts/Lato/Lato-Bold.ttf) format('truetype');
 }
 
 * {
@@ -19,7 +24,7 @@ $acc-color: #AB1F72;
 }
 
 body {
-    font-family: 'Roboto-Medium';
+    font-family: 'Lato-Regular';
     background-color: $primary-color;
     color: $secondary-color;
     overflow: hidden;
@@ -107,21 +112,20 @@ button:hover {
     height: 99.68vh !important;
 }
 
-#text-bio {
-    width: 90%;
+#container-bio {
+    width: 96%;
     margin-bottom: 50px;
+    text-align: justify;
 }
 
 .bio {
-    text-align: center;
     margin-bottom: 10px;
     font-size: 19px;
 }
 
 .bio b {
-    color: $acc-color;
-    font-weight: normal;
-}
+    font-family: 'Lato-Bold';
+} 
 
 .logo-group {
     border: $secondary-color solid 2px;
