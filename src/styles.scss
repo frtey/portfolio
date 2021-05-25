@@ -1,5 +1,6 @@
 $primary-color: #01000c;
 $secondary-color: #A39013;
+$acc-color: #AB1F72;
 
 @font-face {
     font-family: 'Karantina-Bold';
@@ -44,9 +45,9 @@ body {
 
 .main-section {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     flex-basis: 80%;
+    justify-content: center;
     // border:10px solid rgb(79, 100, 1);
 }
 
@@ -83,7 +84,9 @@ button:hover {
     flex-basis: 10%;
     // border:10px solid brown;
     text-align: center;
-    padding: 200px 0;    
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
 .sidebar a {
@@ -91,10 +94,6 @@ button:hover {
     border: $secondary-color solid 1px;
     padding: 8px 16px;
     border-radius: 3px;
-}
-
-.sidebar button:hover {
-    cursor: pointer;
 }
 
 .jobs {
@@ -106,6 +105,28 @@ button:hover {
 
 .particle-canvas {
     height: 99.68vh !important;
+}
+
+#text-bio {
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.bio {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.bio b {
+    color: $acc-color;
+    font-weight: normal;
+}
+
+.logo-group {
+    border: $secondary-color solid 2px;
+    padding: 8px 16px;
+    border-radius: 3px;
 }
 
 .tech-logo {
