@@ -1,136 +1,140 @@
 $primary-color: #01000c;
-$secondary-color: #A39013;
-$acc-color: #AB1F72;
+$secondary-color: #a39013;
+// $acc-color: #ab1f72;
 
 @font-face {
-    font-family: 'Karantina-Bold';
-    src: local('Karantina-Bold'), url(./styles/fonts/Karantina/Karantina-Bold.ttf) format('truetype');
+  font-family: "Karantina-Bold";
+  src: local("Karantina-Bold"),
+    url(./styles/fonts/Karantina/Karantina-Bold.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'Lato-Regular';
-    src: local('Lato-Regular'), url(./styles/fonts/Lato/Lato-Regular.ttf) format('truetype');
+  font-family: "Lato-Regular";
+  src: local("Lato-Regular"),
+    url(./styles/fonts/Lato/Lato-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'Lato-Bold';
-    src: local('Lato-Bold'), url(./styles/fonts/Lato/Lato-Bold.ttf) format('truetype');
+  font-family: "Lato-Bold";
+  src: local("Lato-Bold"),
+    url(./styles/fonts/Lato/Lato-Bold.ttf) format("truetype");
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Lato-Regular';
-    background-color: $primary-color;
-    color: $secondary-color;
-    overflow: hidden;
-}
-
-.particle-canvas{
-    height: 28.375vw !important;
-}
-
-.container {        
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    width: 100%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    // border: 10px grey solid;
-}
-
-.main-section {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 80%;
-    justify-content: center;
-    // border:10px solid rgb(79, 100, 1);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {    
-	background: none;
-    border: none;
-    color: inherit;
-    text-decoration: underline 0.04em rgba(255, 255, 255, 0);
-    transition: text-decoration-color 800ms;
-}
-
-button:hover {
-    cursor:default;
-    text-decoration-color: $secondary-color;
-}
-
-.next-page-link:hover {
-    background-color: $secondary-color;  
-    color: $primary-color;  
-}
-
-.main-title {    
-    // border: 10px pink solid;
-    font-family: "Karantina-Bold";
-    font-size: 13vw;
-}
-
-.sidebar {
-    flex-basis: 10%;
-    // border:10px solid brown;
-    text-align: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-
-.sidebar a {
-    font-size: 20px;
-    border: $secondary-color solid 1px;
-    padding: 8px 16px;
-    border-radius: 3px;
-}
-
-.jobs {
-    // border: 10px red solid;
-    text-align: center;
-    font-size: 40px;
-    margin-top: 5px; 
+  font-family: "Lato-Regular";
+  background-color: $primary-color;
+  color: $secondary-color;
+  overflow: hidden;
 }
 
 .particle-canvas {
-    height: 99.68vh !important;
+  height: 28.375vw !important;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  // border: 10px grey solid;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 80%;
+  justify-content: center;
+  flex-direction: column;
+  // border:10px solid rgb(79, 100, 1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-title {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline 0.04em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 800ms;
+}
+
+.main-title:hover {
+  cursor: default;
+  text-decoration-color: $secondary-color;
+}
+
+.next-page-link:hover {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.main-title {
+  // border: 10px pink solid;
+  font-family: "Karantina-Bold";
+  font-size: 13vw;
+}
+
+.sidebar {
+  flex-basis: 10%;
+  // border:10px solid brown;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar a {
+  font-size: 20px;
+  border: $secondary-color solid 1px;
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+
+.jobs {
+  // border: 10px red solid;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 5px;
+}
+
+.particle-canvas {
+  height: 99.68vh !important;
 }
 
 #container-bio {
-    width: 96%;
-    margin-bottom: 50px;
-    text-align: justify;
+  width: 96%;
+  margin-bottom: 50px;
+  text-align: justify;
 }
 
 .bio {
-    margin-bottom: 10px;
-    font-size: 19px;
+  margin-bottom: 10px;
+  font-size: 19px;
 }
 
 .bio b {
-    font-family: 'Lato-Bold';
-} 
+  font-family: "Lato-Bold";
+}
 
 .logo-group {
-    border: $secondary-color solid 2px;
-    padding: 8px 16px;
-    border-radius: 3px;
+  border: $secondary-color solid 2px;
+  padding: 8px 16px;
+  border-radius: 3px;
 }
 
 .tech-logo {
@@ -139,23 +143,72 @@ button:hover {
     border-radius: 30px;
 }
 
-@media screen and (max-width:1300px ) {
-    .main-section {
-        flex-basis: 100%;
-        margin-top: 10vh;
-    }
-    .sidebar {
-        flex-basis: 50%;
-        order: 1;
-        font-size: 2vw;
-        padding: 0px;
-    }
-    
-    .sidebar a {
-        font-size: 2vh;
-    }
+#modals-container {
+    display: grid;
+    border: 5px solid $secondary-color;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
 
-    .jobs {
-        font-size: 4vw;
-    }
+.open-modal {
+  font-weight: bold;
+  background: $secondary-color;
+  color: $primary-color;
+  padding: 0.75rem 1.75rem;
+  height: 150px;
+  border: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: black;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-dialog {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  border-radius: 5px;
+  background: white;
+  overflow: auto;
+  cursor: default;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .main-section {
+    flex-basis: 100%;
+    margin-top: 10vh;
+  }
+  .sidebar {
+    flex-basis: 50%;
+    order: 1;
+    font-size: 2vw;
+    padding: 0px;
+  }
+
+  .sidebar a {
+    font-size: 2vh;
+  }
+
+  .jobs {
+    font-size: 4vw;
+  }
 }
