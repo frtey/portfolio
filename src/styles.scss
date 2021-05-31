@@ -143,54 +143,11 @@ a {
     border-radius: 30px;
 }
 
-#modals-container {
-    display: grid;
-    border: 5px solid $secondary-color;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
-}
-
-.open-modal {
-  font-weight: bold;
-  background: $secondary-color;
-  color: $primary-color;
-  padding: 0.75rem 1.75rem;
-  height: 150px;
-  border: none;
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.project-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: black;
-  cursor: pointer;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.35s ease-in;
+  width: 100%;
 }
-
-.modal.is-visible {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal-dialog {
-  position: relative;
-  max-width: 800px;
-  max-height: 80vh;
-  border-radius: 5px;
-  background: white;
-  overflow: auto;
-  cursor: default;
-}
-
 
 @media screen and (max-width: 1300px) {
   .main-section {
