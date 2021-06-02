@@ -38,6 +38,7 @@ textarea {
 }
 
 .grid {
+  background-color: black;
   border: 3px solid;
   border-spacing: 0;
 }

@@ -1,6 +1,7 @@
 $primary-color: #01000c;
 $secondary-color: #a39013;
-// $acc-color: #ab1f72;
+$acc-color: #ab1f72;
+@import 'sudoku-styles';
 
 @font-face {
   font-family: "Karantina-Bold";
@@ -156,7 +157,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, .02);
-  transition: transform 1s;
+  transition: transform .2s;
 }
 
 .project-card:hover {
@@ -165,7 +166,7 @@ a {
 
 .project-card-title {
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .project-card>img {
@@ -173,12 +174,38 @@ a {
   height: 70%;
 }
 
+.project-card>hr {
+  width: 100%;
+  color: $secondary-color;
+  height: 1px;
+  margin-bottom: 10px;
+}
+
 .project-body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
+.footer {
+  margin-top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.link-to-project {
+  font-size: 20px;
+  border: $secondary-color solid 1px;
+  padding: 8px 16px;
+  border-radius: 3px;
+}
+
+.link-to-project:hover {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
 
 @media screen and (max-width: 1300px) {
   .main-section {
