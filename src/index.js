@@ -1,6 +1,9 @@
 import barba from "@barba/core";
 import "./styles.scss";
 import "./js/particles";
+import "./js/sudoku-solver";
+import "./js/sudoku-index";
+import "./routes/api.js";
 import { gsap } from "gsap";
 
 const particlesJS = window.particlesJS;
