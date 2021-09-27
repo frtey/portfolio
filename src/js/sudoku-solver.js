@@ -138,7 +138,6 @@ class SudokuSolver {
     }
   }
 
-  //A refaire, c'est vraiment sale :
   check(puzzleString, coordinate, value) {
     const validation = this.validate(puzzleString)
 
