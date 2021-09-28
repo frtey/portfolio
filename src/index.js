@@ -1,9 +1,7 @@
+import "./js/sudoku-index"
 import barba from "@barba/core";
 import "./styles.scss";
 import "./js/particles";
-import "./js/sudoku-solver";
-import "./js/sudoku-index";
-import "./routes/api.js";
 import { gsap } from "gsap";
 
 const particlesJS = window.particlesJS;
@@ -14,6 +12,7 @@ particlesJS.load("particles-js", "./particles.json");
 //BARBA SECTION
 
 barba.init({
+
   // debug: true,
   transitions: [
     {
@@ -70,7 +69,60 @@ barba.init({
         });
       },
     },
+    {
+      name: "upTransition",
+      // sync: true,
+
+      custom: ({ trigger }) => {
+        return (
+          trigger.classList &&
+          trigger.classList.contains("project-card")
+        );
+      },
+
+      
+      leave(data) {
+        return gsap.to(data.current.container, {
+          duration: 0.4,
+          y: -window.innerWidth,
+          ease: "power4",
+        });
+      },
+
+      enter(data) {
+        return gsap.from(data.next.container, {
+          duration: 0.4,
+          y: window.innerWidth,
+          ease: "power4",
+        });
+      },
+    },
+    {
+      name: "downTransition",
+      // sync: true,
+
+      custom: ({ trigger }) => {
+        return (
+          trigger.classList &&
+          trigger.classList.contains("link-to-project")
+        );
+      },
+
+      leave(data) {
+        return gsap.to(data.current.container, {
+          duration: 0.4,
+          y: window.innerWidth,
+          ease: "power4",
+        });
+      },
+
+      enter(data) {
+        return gsap.from(data.next.container, {
+          duration: 0.4,
+          y: -window.innerWidth,
+          ease: "power4",
+        });
+      },
+    },
   ],
 });
-
-//MODALS SECTION

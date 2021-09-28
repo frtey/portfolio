@@ -1,6 +1,12 @@
 require("babel-polyfill");
+import "../routes/api.js";
+import "../js/sudoku-solver";
 
-if (window.location.pathname == '/sudoku.html') {
+
+
+if (document.body.classList.contains('sudoku')) {
+
+  console.log("test")
 
   const textArea = document.getElementById("text-input");
   const coordInput = document.getElementById("coord");
