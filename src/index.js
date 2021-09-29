@@ -1,17 +1,27 @@
-import "./js/sudoku-index"
+import sudoku from "./js/sudoku-index";
+import "./routes/api";
+import "./js/sudoku-solver";
+
 import barba from "@barba/core";
 import "./styles.scss";
 import "./js/particles";
 import { gsap } from "gsap";
 
+// PARTICLES JS SECTION
+
 const particlesJS = window.particlesJS;
-
 particlesJS.load("particles-js", "./particles.json");
-
 
 //BARBA SECTION
 
 barba.init({
+  views: [{
+    namespace: 'sudoku',
+    beforeEnter(data) {
+      console.log("test");
+      sudoku();
+    }
+  }],
 
   // debug: true,
   transitions: [
@@ -79,7 +89,6 @@ barba.init({
           trigger.classList.contains("project-card")
         );
       },
-
       
       leave(data) {
         return gsap.to(data.current.container, {

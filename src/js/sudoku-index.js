@@ -1,23 +1,15 @@
 require("babel-polyfill");
-import "../routes/api.js";
-import "../js/sudoku-solver";
 
-
-
-if (document.body.classList.contains('sudoku')) {
-
-  console.log("test")
+export default function sudoku() {
 
   const textArea = document.getElementById("text-input");
   const coordInput = document.getElementById("coord");
   const valInput = document.getElementById("val");
   const errorMsg = document.getElementById("error");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    textArea.value =
-      "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
-    fillpuzzle(textArea.value);
-  });
+  textArea.value =
+    "..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..";
+  fillpuzzle(textArea.value);
 
   textArea.addEventListener("input", () => {
     fillpuzzle(textArea.value);
@@ -72,5 +64,4 @@ if (document.body.classList.contains('sudoku')) {
 
   document.getElementById("solve-button").addEventListener("click", getSolved)
   document.getElementById("check-button").addEventListener("click", getChecked)
-
 }
