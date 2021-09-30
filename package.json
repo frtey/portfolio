@@ -7,8 +7,6 @@
     "start": "webpack serve",
     "watch": "webpack --watch",
     "build": "cross-env NODE_ENV=production webpack",
-    "build-dev": "webpack",
-    "clean": "rmdir /s dist"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +37,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "gsap": "^3.6.1",
-    "path": "^0.12.7",
-    "stream": "^0.0.2"
+    "nodemon": "^2.0.13"
   }
 }
