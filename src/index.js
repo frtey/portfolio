@@ -1,11 +1,18 @@
 import sudoku from "./js/sudoku-index";
 import "./routes/api";
-import "./js/sudoku-solver";
 
 import barba from "@barba/core";
 import "./styles.scss";
 import "./js/particles";
 import { gsap } from "gsap";
+
+// EXPRESS SERVER SECTION
+
+// const express = __non_webpack_require('express');
+
+// const app = express();
+
+// app.listen(8080, () => console.log("server started"))
 
 // PARTICLES JS SECTION
 
@@ -18,7 +25,6 @@ barba.init({
   views: [{
     namespace: 'sudoku',
     beforeEnter(data) {
-      console.log("test");
       sudoku();
     }
   }],

@@ -1,3 +1,5 @@
+
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -6,15 +8,16 @@
 .form-container {
   max-width: 95%;
   align-self: flex-start;
+  color: $third-color;
 }
 
 .form-container input[type="button"] {
   font-size: 15px;
   font-weight: bold;
-  border: $secondary-color solid 1px;
+  border: $third-color solid 1px;
   border-radius: 3px;
   padding: 4px 8px;
-  background-color: rgba(163, 144, 19, 1);
+  background-color: $third-color;
   color: $primary-color;
   margin-top: 2px;
   margin-bottom: 10px;
@@ -23,7 +26,7 @@
 textarea {
   width: 100%;
   background-color: rgba(100, 100, 100, 0.4);
-  border: 1px solid $secondary-color;
+  border: 1px solid $third-color;
   color: white;
 }
 
@@ -38,12 +41,16 @@ textarea:focus {
 
 .checker {
   background-color: rgba(0, 0, 0, 0.3);
-  border: 1px solid $secondary-color;
+  border: 1px solid $third-color;
   color: white;
 }
 
 .checker:focus {
   outline: none;
+}
+
+#sudoku-grid {
+  color: $third-color;
 }
 
 #user-stories {

@@ -1,5 +1,7 @@
 require("babel-polyfill");
 
+import "../routes/api";
+
 export default function sudoku() {
 
   const textArea = document.getElementById("text-input");
@@ -30,14 +32,14 @@ export default function sudoku() {
   }
 
   async function getSolved() {
-    const stuff = {"puzzle": textArea.value}
+    const puzzleString = {"puzzle": textArea.value}
     const data = await fetch("/api/solve", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-type": "application/json"
       },
-      body: JSON.stringify(stuff)
+      body: JSON.stringify(puzzleString)
     })
     const parsed = await data.json();
     if (parsed.error) {
@@ -48,14 +50,14 @@ export default function sudoku() {
   }
 
   async function getChecked() {
-    const stuff = {"puzzle": textArea.value, "coordinate": coordInput.value, "value": valInput.value}
+    const puzzleString = {"puzzle": textArea.value, "coordinate": coordInput.value, "value": valInput.value}
       const data = await fetch("/api/check", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-type": "application/json"
       },
-      body: JSON.stringify(stuff)
+      body: JSON.stringify(puzzleString)
     })
     const parsed = await data.json();
     errorMsg.innerHTML = `<code>${JSON.stringify(parsed, null, 2)}</code>`;
