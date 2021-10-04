@@ -4,23 +4,27 @@
   "description": "",
   "main": "./public/scripts/App.js",
   "scripts": {
+    "start:back": "nodemon --exec babel-node src/back/server.js",
     "start": "webpack serve",
     "watch": "webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.0",
+    "@babel/node": "^7.15.4",
     "@babel/preset-env": "^7.14.1",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
+    "dotenv": "^10.0.0",
     "file-loader": "^6.2.0",
     "html-loader": "^2.1.2",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
+    "nodemon": "^2.0.13",
     "particles.js": "^2.0.0",
     "sass": "^1.32.13",
     "sass-loader": "^11.1.0",
@@ -28,15 +32,14 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
+    "body-parser": "^1.19.0",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
     "babel-polyfill": "^6.26.0",
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "gsap": "^3.6.1",
-    "nodemon": "^2.0.13"
+    "gsap": "^3.6.1"
   }
 }

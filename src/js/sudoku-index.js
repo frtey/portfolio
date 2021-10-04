@@ -1,7 +1,5 @@
 require("babel-polyfill");
 
-import "../routes/api";
-
 export default function sudoku() {
 
   const textArea = document.getElementById("text-input");
