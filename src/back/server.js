@@ -16,7 +16,7 @@ app.use(cors());
 
 app.route('/')
   .get(function (req, res) {
-    res.sendFile('sudoku.html', { root: './dist/' });
+    res.sendFile('translator.html', { root: './dist/' });
   });
 
 apiRoutes(app);

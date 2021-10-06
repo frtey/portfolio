@@ -2,6 +2,8 @@
 
 const SudokuSolver = require('../js/sudoku-solver.js');
 
+const Translator = require('../js/translator.js');
+
 module.exports = function (app) {
   
   let solver = new SudokuSolver();
@@ -31,5 +33,23 @@ module.exports = function (app) {
         }
       }
       
+    });    
+  
+  const translator = new Translator();
+
+  app.route('/api/translate')
+    .post((req, res) => {
+		if (req.body.text === "") {
+			res.json({ error: "No text to translate" })
+		} else if (!req.body.text || !req.body.locale) {
+			res.json({ error: "Required field(s) missing" })
+		} else {
+			let translatedText = translator.getTranslation(req.body.text, req.body.locale)
+			if (translatedText.error) {
+			res.json(translatedText)
+			} else {
+			res.json({ text: req.body.text, translation: translatedText })
+			}        
+		}      
     });
 };

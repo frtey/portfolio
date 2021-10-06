@@ -1,4 +1,5 @@
 import sudoku from "./js/sudoku-index";
+import translator from "./js/translator-index";
 
 import barba from "@barba/core";
 import "./styles.scss";
@@ -13,12 +14,20 @@ particlesJS.load("particles-js", "./particles.json");
 //BARBA SECTION
 
 barba.init({
-  views: [{
-    namespace: 'sudoku',
-    beforeEnter(data) {
-      sudoku();
+  views: [
+    {
+      namespace: 'sudoku',
+      beforeEnter(data) {
+        sudoku();
+      }
+    },
+    {
+      namespace: 'translator',
+      beforeEnter(data) {
+        translator();
+      }
     }
-  }],
+  ],
 
   // debug: true,
   transitions: [

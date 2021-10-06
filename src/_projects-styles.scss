@@ -1,8 +1,7 @@
-
-
 .app-container {
   display: flex;
   flex-direction: column;
+  margin-top: 2%;
 }
 
 .form-container {
@@ -11,7 +10,7 @@
   color: $third-color;
 }
 
-.form-container input[type="button"] {
+.form-container input[type="button"], select {
   font-size: 15px;
   font-weight: bold;
   border: $third-color solid 1px;
@@ -37,6 +36,11 @@ textarea[placeholder] {
 
 textarea:focus {
   outline: none;
+}
+
+#output-container {
+  margin-left: 1em;
+  color: $third-color;
 }
 
 .checker {
