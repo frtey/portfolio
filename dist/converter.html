@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Metric/Imperial Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body data-barba="wrapper">
+  <div id="particles-js" class="particle-canvas"></div>
+
+  <main 
+    class="container" 
+    data-barba="container" 
+    data-barba-namespace="converter"
+  >
+    <section class="project-body">
+      <button class="main-title">
+        Metric/Imp Converter
+      </button>
+      <div class="app-container">
+        <div class="examples-converter">
+          <p>Mode d'utilisation</p>
+          <code>* L <-> gal</code><br>
+          <code>* mi <-> km</code><br>
+          <code>* lbs <-> kg</code><br>
+          <code>* Possibilité d'utiliser des fractions</code><br>
+          <code>* Une unité non indiquée renverra une erreur</code><br>
+          <code>* Une quantité non indiquée compte pour 1</code><br>
+        </div>
+      
+        <div class='form-container' >
+          <textarea
+              rows="8"
+              cols="60"
+              id="text-input"
+            ></textarea>
+            <br />
+          <input type="button" value='Convertir !' id="convert-btn">
+          <div id='converted-result'></p>
+            <div id="error-msg"></div>
+            <code id='jsonResult'></code>
+          </div>
+        </div>
+    </section>
+    <div class="footer">
+      <a href="./projects.html" class="link-to-project">Retourner aux projets</a>
+    </div>
+  </main>
+</body>
+<script src="./main.js"></script>
+</html>
+  

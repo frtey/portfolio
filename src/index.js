@@ -1,5 +1,6 @@
 import sudoku from "./js/sudoku-index";
 import translator from "./js/translator-index";
+import converter from "./js/converter-index";
 
 import barba from "@barba/core";
 import "./styles.scss";
@@ -25,6 +26,12 @@ barba.init({
       namespace: 'translator',
       beforeEnter(data) {
         translator();
+      }
+    },
+    {
+      namespace: 'converter',
+      beforeEnter(data) {
+        converter();
       }
     }
   ],

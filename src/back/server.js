@@ -16,7 +16,7 @@ app.use(cors());
 
 app.route('/')
   .get(function (req, res) {
-    res.sendFile('translator.html', { root: './dist/' });
+    res.sendFile('converter.html', { root: './dist/' });
   });
 
 apiRoutes(app);

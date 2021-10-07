@@ -23,7 +23,7 @@ export default function translator() {
     
         const parsed = await data.json();
         if (parsed.error) {
-        errorArea.innerText = JSON.stringify(parsed);
+            errorArea.innerText = JSON.stringify(parsed);
         return;
         }
     

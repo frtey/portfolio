@@ -4,6 +4,9 @@ const SudokuSolver = require('../js/sudoku-solver.js');
 
 const Translator = require('../js/translator.js');
 
+const ConvertHandler = require('../js/convertHandler.js');
+
+
 module.exports = function (app) {
   
   let solver = new SudokuSolver();
@@ -51,5 +54,30 @@ module.exports = function (app) {
 			res.json({ text: req.body.text, translation: translatedText })
 			}        
 		}      
+    });
+
+  const convertHandler = new ConvertHandler();
+
+  app.route('/api/convert')
+    .post((req, res) => {
+      let input = req.body.text;
+      let initNum = convertHandler.getNum(input);
+      let initUnit = convertHandler.getUnit(input);
+      let returnNum = convertHandler.convert(initNum, initUnit);
+      let returnUnit = convertHandler.getReturnUnit(initUnit);
+      let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
+
+      if (initUnit === "invalid unit" && initNum === "invalid number") {
+        res.json({ error: "invalid number and unit" })
+      } else if (initUnit === "invalid unit") {
+        res.json({ error: "invalid unit" })
+      } else if (initNum === "invalid number") {
+        res.json({ error: "invalid number" })
+      }
+      else {
+        res.json({ initNum: parseFloat(initNum), initUnit, returnNum: parseFloat(returnNum), returnUnit, string: toString });
+      }
+
+
     });
 };
