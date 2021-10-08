@@ -1,0 +1,27 @@
+<div class="examples">
+            <p>Example <code>GET</code> usage</p>
+            <code>/api/issues/{project}</code><br />
+            <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br />
+            <p>Example return</p>
+            <pre>
+              <code>[
+                { 
+                  "_id": "5871dda29faedc3491ff93bb",
+                  "issue_title": "Fix error in posting data",
+                  "issue_text": "When we post data it has an error.",
+                  "created_on": "2017-01-08T06:35:14.240Z",
+                  "updated_on": "2017-01-08T06:35:14.240Z",
+                  "created_by": "Joe",
+                  "assigned_to": "Joe",
+                  "open": true,
+                  "status_text": "In QA"
+                },
+                ...
+              ]
+              </code>
+            </pre>
+            <p>Examples</p>
+            Go to
+            <a href="/api/issues/apitest/"><code>/api/issues/apitest/</code></a>
+            project
+        </div>
