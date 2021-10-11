@@ -15,7 +15,7 @@
     >
       <section class="project-body">
         <button class="main-title">Issue Tracker</button>
-        <header id="issue-header">API Tests</header>
+        <header id="issue-header">Projet: apitest</header>
         <hr />
         <div class="app-container">
           <div id="issue-form-container">
@@ -66,38 +66,32 @@
                 <input
                   type="text"
                   id="testForm2-_id"
-                  name="_id"
                   placeholder="*_id"
                 /><br />
                 <input
                   type="text"
                   id="testForm2-issue_title"
-                  name="issue_title"
                   placeholder="(opt)Titre"
                 /><br />
                 <textarea
                   type="text"
                   id="testForm2-issue_text"
-                  name="issue_text"
                   placeholder="(opt)Texte"
                 ></textarea
                 ><br />
                 <input
                   type="text"
                   id="testForm2-created_by"
-                  name="created_by"
                   placeholder="(opt)Créé par"
                 /><br />
                 <input
                   type="text"
                   id="testForm2-assigned_to"
-                  name="assigned_to"
                   placeholder="(opt)Assigné à"
                 /><br />
                 <input
                   type="text"
                   id="testForm2-status_text"
-                  name="status_text"
                   placeholder="(opt)Texte status"
                 /><br />
                 <label
@@ -129,46 +123,9 @@
                 <input type="button" value="Supprimer" id="testForm3-submit" />
               </form>
             </div>
-            <code id="jsonResult"></code>
           </div>
-          <script>
-            $(function () {
-              $("#testForm").submit(function (e) {
-                $.ajax({
-                  url: "/api/issues/apitest",
-                  type: "post",
-                  data: $("#testForm").serialize(),
-                  success: function (data) {
-                    $("#jsonResult").text(JSON.stringify(data));
-                  },
-                });
-                e.preventDefault();
-              });
-              $("#testForm2").submit(function (e) {
-                $.ajax({
-                  url: "/api/issues/apitest",
-                  type: "put",
-                  data: $("#testForm2").serialize(),
-                  success: function (data) {
-                    $("#jsonResult").text(JSON.stringify(data));
-                  },
-                });
-                e.preventDefault();
-              });
-              $("#testForm3").submit(function (e) {
-                $.ajax({
-                  url: "/api/issues/apitest",
-                  type: "delete",
-                  data: $("#testForm3").serialize(),
-                  success: function (data) {
-                    $("#jsonResult").text(JSON.stringify(data));
-                  },
-                });
-                e.preventDefault();
-              });
-            });
-          </script>
         </div>
+        <code id="jsonResult"></code>
       </section>
       <div class="footer">
         <a href="./projects.html" class="link-to-project"

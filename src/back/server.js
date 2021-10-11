@@ -16,7 +16,7 @@ app.use(cors());
 
 app.route('/')
   .get(function (req, res) {
-    res.sendFile('converter.html', { root: './dist/' });
+    res.sendFile('tracker.html', { root: './dist/' });
   });
 
 apiRoutes(app);
