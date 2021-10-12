@@ -2,6 +2,7 @@ import sudoku from "./js/sudoku-index";
 import translator from "./js/translator-index";
 import converter from "./js/converter-index";
 import tracker from "./js/tracker-index";
+import counter from "./js/counter-index";
 
 import barba from "@barba/core";
 import "./styles.scss";
@@ -39,6 +40,12 @@ barba.init({
       namespace: 'tracker',
       beforeEnter(data) {
         tracker();
+      }
+    },
+    {
+      namespace: 'counter',
+      beforeEnter(data) {
+        counter();
       }
     }
   ],
