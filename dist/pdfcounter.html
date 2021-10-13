@@ -16,60 +16,51 @@
       <section class="project-body">
         <button class="main-title">PDF pages counter</button>
         <div class="app-container">
-          <div id="issue-form-container">
-            <form
-              method="post"
-              action=""
-              name="myform"
-              id="myForm"
-              enctype="multipart/form-data"
-            >
-              <div class="form-group">
-                <label for="nbPages">Nombre de pages : </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nbPages"
-                  name="nbPages"
-                  placeholder="0"
-                  value=""
-                  disabled
-                />
-              </div>
-              <div class="form-group">
-                <label for="nbPagesNB">Nombre de pages Noir & Blanc : </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nbPagesNB"
-                  placeholder="0"
-                  value=""
-                  disabled
-                />
-              </div>
-              <div class="form-group">
-                <label for="nbPagesC">Nombre de pages Couleurs : </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nbPagesC"
-                  placeholder="0"
-                  value=""
-                  disabled
-                />
-              </div>
-              <div class="file-path-wrapper">
-                <input
-                  type="file"
-                  class="file-path validate"
-                  id="FileUpload-submit"
-                  name="PDFUploadFile"
-                />
-              </div>
-              <button type="submit" id="submit" class="btn btn-primary">
-                Envoyer
-              </button>
+          <div class="form-container">
+            <form id="file-sender">
+              <label for="file-upload" id="custom-file-upload">
+                Parcourir vos fichiers
+              </label>
+              <input id="file-upload" type="file" hidden />
+
+              <input type="button" value="Calculer le nombre de pages" id="file-sender-btn" />
             </form>
+          </div>
+          <div id="counter-results">
+            <div class="counterResult" id="pages-number">
+              <label for="nbPages">Nombre de pages total : </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nbPages"
+                name="nbPages"
+                placeholder="0"
+                value=""
+                disabled
+              />
+            </div>
+            <div class="counterResult" id="bw-pages-number">
+              <label for="nbPagesNB">Nombre de pages Noir & Blanc : </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nbPagesNB"
+                placeholder="0"
+                value=""
+                disabled
+              />
+            </div>
+            <div class="counterResult" id="color-pages-number">
+              <label for="nbPagesC">Nombre de pages Couleurs : </label>
+              <input
+                type="text"
+                class="form-control"
+                id="nbPagesC"
+                placeholder="0"
+                value=""
+                disabled
+              />
+            </div>
           </div>
         </div>
       </section>

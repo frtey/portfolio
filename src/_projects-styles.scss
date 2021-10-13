@@ -15,10 +15,23 @@
 .form-container input[type="button"], select {
   font-size: 15px;
   font-weight: bold;
-  border: $third-color solid 1px;
+  border: none;
   border-radius: 3px;
   padding: 4px 8px;
   background-color: $third-color;
+  color: $primary-color;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+#custom-file-upload {
+  margin-right: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  background-color: $secondary-color;
   color: $primary-color;
   margin-top: 2px;
   margin-bottom: 10px;
