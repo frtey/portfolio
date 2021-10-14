@@ -16,7 +16,7 @@ app.use(cors());
 
 app.route('/')
   .get(function (req, res) {
-    res.sendFile('tracker.html', { root: './dist/' });
+    res.sendFile('pdfcounter.html', { root: './dist/' });
   });
 
 apiRoutes(app);

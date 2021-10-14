@@ -17,51 +17,22 @@
         <button class="main-title">PDF pages counter</button>
         <div class="app-container">
           <div class="form-container">
-            <form id="file-sender">
+            <form id="file-sender" enctype="multipart/form-data">
               <label for="file-upload" id="custom-file-upload">
                 Parcourir vos fichiers
               </label>
-              <input id="file-upload" type="file" hidden />
+              <input id="file-upload" type="file" name="pdfFile" hidden />
 
-              <input type="button" value="Calculer le nombre de pages" id="file-sender-btn" />
+              <input
+                type="button"
+                value="Calculer le nombre de pages"
+                id="file-sender-btn"
+              />
             </form>
           </div>
-          <div id="counter-results">
-            <div class="counterResult" id="pages-number">
-              <label for="nbPages">Nombre de pages total : </label>
-              <input
-                type="text"
-                class="form-control"
-                id="nbPages"
-                name="nbPages"
-                placeholder="0"
-                value=""
-                disabled
-              />
-            </div>
-            <div class="counterResult" id="bw-pages-number">
-              <label for="nbPagesNB">Nombre de pages Noir & Blanc : </label>
-              <input
-                type="text"
-                class="form-control"
-                id="nbPagesNB"
-                placeholder="0"
-                value=""
-                disabled
-              />
-            </div>
-            <div class="counterResult" id="color-pages-number">
-              <label for="nbPagesC">Nombre de pages Couleurs : </label>
-              <input
-                type="text"
-                class="form-control"
-                id="nbPagesC"
-                placeholder="0"
-                value=""
-                disabled
-              />
-            </div>
-          </div>
+        </div>
+        <div id='converted-result'></p>
+          <code id='jsonResult'></code>
         </div>
       </section>
       <div class="footer">
@@ -70,8 +41,6 @@
         >
       </div>
     </main>
-    <img src="public/images/spinner.gif" id="loading" />
-    <p id="succes"></p>
   </body>
 
   <script src="./main.js"></script>

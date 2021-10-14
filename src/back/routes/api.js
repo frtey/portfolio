@@ -6,6 +6,8 @@ const Translator = require("../js/translator.js");
 
 const ConvertHandler = require("../js/convertHandler.js");
 
+const multer = require("multer");
+
 require("dotenv").config();
 const mongoose = require("mongoose");
 
@@ -28,8 +30,7 @@ let issueSchema = new mongoose.Schema({
 let Issue = mongoose.model("Issue", issueSchema);
 
 module.exports = function (app) {
-
-    //----------------------SUDOKU------------------------------
+  //----------------------SUDOKU------------------------------
 
   let solver = new SudokuSolver();
 
@@ -123,95 +124,134 @@ module.exports = function (app) {
     }
   });
 
-    //----------------------TRACKER------------------------------
+  //----------------------TRACKER------------------------------
 
-  app.route('/api/issues/:project')
-  
-    .get(function (req, res){
+  app
+    .route("/api/issues/:project")
+
+    .get(function (req, res) {
       let project = req.params.project;
       let queryObject = {
-        project
-      }
+        project,
+      };
       for (let key in req.query) {
-        queryObject[key] = req.query[key]
+        queryObject[key] = req.query[key];
       }
-      Issue.find(queryObject).select({ project: 0 }).exec((err, data) => {
-        if (err) {
-          return console.log("Error: " + err)
-        } else {
-          res.json(data)
-        }
-      })
+      Issue.find(queryObject)
+        .select({ project: 0 })
+        .exec((err, data) => {
+          if (err) {
+            return console.log("Error: " + err);
+          } else {
+            res.json(data);
+          }
+        });
     })
-    
-    .post(function (req, res){
+
+    .post(function (req, res) {
       let project = req.params.project;
-      let issue = new Issue({ 
-        project, 
-        issue_title: req.body.issue_title, 
-        issue_text: req.body.issue_text, 
-        created_by: req.body.created_by, 
-        assigned_to: req.body.assigned_to, 
-        status_text: req.body.status_text
-    })
+      let issue = new Issue({
+        project,
+        issue_title: req.body.issue_title,
+        issue_text: req.body.issue_text,
+        created_by: req.body.created_by,
+        assigned_to: req.body.assigned_to,
+        status_text: req.body.status_text,
+      });
 
       if (issue.issue_title && issue.issue_text && issue.created_by) {
         issue.save((err, data) => {
-          if (err) { return console.log("Error: " + err) }
-          else {
-            data = data.toObject()
-            delete data.__v
-            res.json(data) 
+          if (err) {
+            return console.log("Error: " + err);
+          } else {
+            data = data.toObject();
+            delete data.__v;
+            res.json(data);
           }
-        })
+        });
       } else {
-        res.json({ error: 'required field(s) missing' })
+        res.json({ error: "required field(s) missing" });
       }
     })
-    
-    .put(function (req, res){
+
+    .put(function (req, res) {
       if (req.body._id) {
         let updatedObject = {
           updated_on: new Date(),
-        }
+        };
 
         for (let key in req.body) {
           if (req.body[key] && key != "_id" && key != "open") {
-            updatedObject[key] = req.body[key]
+            updatedObject[key] = req.body[key];
           }
           if (key == "open" && !req.body[key]) {
-            updatedObject[key] = req.body[key]
+            updatedObject[key] = req.body[key];
           }
         }
 
         if (Object.keys(updatedObject).length > 1) {
-          Issue.findOneAndUpdate({ _id: req.body._id }, updatedObject, (err, data) => {
-            if (err || !data) { 
-              res.json({ error: "could not update", _id: req.body._id }) 
-            } else {
-              res.json({ result: "successfully updated", _id: data._id }) 
+          Issue.findOneAndUpdate(
+            { _id: req.body._id },
+            updatedObject,
+            (err, data) => {
+              if (err || !data) {
+                res.json({ error: "could not update", _id: req.body._id });
+              } else {
+                res.json({ result: "successfully updated", _id: data._id });
+              }
             }
-          })
+          );
         } else {
-          res.json({ error: "no update field(s) sent", _id: req.body._id })
+          res.json({ error: "no update field(s) sent", _id: req.body._id });
         }
-        
-        
       } else {
-        res.json({ error: 'missing _id' })
-      } 
+        res.json({ error: "missing _id" });
+      }
     })
-    
-    .delete(function (req, res){
+
+    .delete(function (req, res) {
       if (req.body._id) {
         Issue.findByIdAndRemove(req.body._id, (err, data) => {
-        if (err || !data) { 
-          res.json({ error: "could not delete", _id: req.body._id }) 
-        } else {
-          res.json({ result: "successfully deleted", _id: data._id }) 
-        }
-      })} else {
-        res.json({ error: "missing _id" }) 
-      }          
-    });    
+          if (err || !data) {
+            res.json({ error: "could not delete", _id: req.body._id });
+          } else {
+            res.json({ result: "successfully deleted", _id: data._id });
+          }
+        });
+      } else {
+        res.json({ error: "missing _id" });
+      }
+    });
+
+  //----------------------PDF_COUNTER------------------------------
+
+  const maxSize = 6 * 1024 * 1024;
+
+  var upload = multer({
+    dest: "./src/back/static/uploads",
+    limits: {
+      fileSize: maxSize
+    },
+    fileFilter: (req, file, cb) => {
+      cb(null, file.mimetype == "application/pdf");
+    },
+  });
+
+  const pdfUpload = upload.single("pdfFile");
+
+  app.route("/api/pdfupload").post((req, res, next) => {
+    pdfUpload(req, res, (err) => {
+      if (err || !req.file) {
+        return res.send({
+          error:
+            "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 6Mo",
+        });
+      }
+      res.send({ message: "Upload réussi !" });
+    });
+  });
+
+  app.use((error, req, res, next) => {
+    res.status(500).send(error.storageErrors);
+  });
 };
