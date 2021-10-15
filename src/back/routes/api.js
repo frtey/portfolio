@@ -6,7 +6,11 @@ const Translator = require("../js/translator.js");
 
 const ConvertHandler = require("../js/convertHandler.js");
 
+const CounterHandler = require("../js/counterHandler.js");
+
 const multer = require("multer");
+
+const path = require("path");
 
 require("dotenv").config();
 const mongoose = require("mongoose");
@@ -225,12 +229,21 @@ module.exports = function (app) {
 
   //----------------------PDF_COUNTER------------------------------
 
+  const counter = new CounterHandler();
+
   const maxSize = 6 * 1024 * 1024;
 
+  var storage = multer.diskStorage({
+    destination: "./src/back/static/uploads",
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + path.extname(file.originalname));
+    },
+  });
+
   var upload = multer({
-    dest: "./src/back/static/uploads",
+    storage: storage,
     limits: {
-      fileSize: maxSize
+      fileSize: maxSize,
     },
     fileFilter: (req, file, cb) => {
       cb(null, file.mimetype == "application/pdf");
@@ -247,6 +260,7 @@ module.exports = function (app) {
             "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 6Mo",
         });
       }
+      console.log(req.file);
       res.send({ message: "Upload réussi !" });
     });
   });
