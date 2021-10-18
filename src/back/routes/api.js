@@ -260,7 +260,7 @@ module.exports = function (app) {
             "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 6Mo",
         });
       }
-      console.log(req.file);
+      counter.getCount(req.file);
       res.send({ message: "Upload réussi !" });
     });
   });

@@ -1,17 +1,59 @@
-/*
- *
- *
- *       Complete the handler logic below
- *
- *
- */
+const { spawn } = require("child_process");
+const { standardization } = require("./american-to-british-spelling");
 
 function CounterHandler() {
-  console.log("fonction lancée");
-  /*$_FILES['file']['name'] =  str_replace(' ', '_', $_FILES['file']['name']);
-   move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);
+  this.getCount = function (data) {
+    let outputArray = {};
+    const command = spawn(
+      "gswin64c.exe",
+      [
+        "-o",
+        "-",
+        "-sDEVICE=inkcov",
+        "src/back/static/uploads/" + data.filename,
+        "2>&1",
+      ],
+      {
+        shell: true,
+      }
+    );
 
-   //Ligne de commande interrogeant GhostScript, récupérant un tableau de sortie de commande ($outputs), et un code d'execution de commande ($retour), où 0 est bien, et tout autre chiffre indique problème
+    command.stdout.setEncoding("utf8");
+    command.stdout.on("data", (data) => {
+      // console.log(data);
+      outputArray += data;
+    });
+     console.log(outputArray);
+
+    command.stdout.setEncoding("utf8");
+    command.stderr.on("data", (data) => {
+      console.log(`stderr: ${data}`);
+    });
+
+    command.stdout.setEncoding("utf8");
+    command.on("error", (error) => {
+      console.log(`error: ${error.message}`);
+    });
+
+    command.stdout.setEncoding("utf8");
+    command.on("close", (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
+  };
+
+  /*
+      EXAMPLE DATA OF FILE :
+      fieldname: 'pdfFile',
+      originalname: 'sample.pdf',
+      encoding: '7bit',
+      mimetype: 'application/pdf',
+      destination: './src/back/static/uploads',
+      filename: '1634566573846.pdf',
+      path: 'src\\back\\static\\uploads\\1634566573846.pdf',
+      size: 3028
+   */
+
+  /*   //Ligne de commande interrogeant GhostScript, récupérant un tableau de sortie de commande ($outputs), et un code d'execution de commande ($retour), où 0 est bien, et tout autre chiffre indique problème
    $commandline = escapeshellcmd("gswin64c.exe -o - -sDEVICE=inkcov uploads/" . $_FILES['file']['name'] . " 2>&1");
    exec($commandline, $outputs, $retour);
 
