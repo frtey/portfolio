@@ -260,8 +260,13 @@ module.exports = function (app) {
             "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 6Mo",
         });
       }
-      counter.getCount(req.file);
-      res.send({ message: "Upload réussi !" });
+
+      async function getCountResult() {
+        const result = await counter.getCount(req.file);
+        res.json(result);
+      }
+
+      getCountResult();
     });
   });
 
