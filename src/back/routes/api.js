@@ -231,7 +231,7 @@ module.exports = function (app) {
 
   const counter = new CounterHandler();
 
-  const maxSize = 6 * 1024 * 1024;
+  const maxSize = 8 * 1024 * 1024;
 
   var storage = multer.diskStorage({
     destination: "./src/back/static/uploads",
@@ -257,7 +257,7 @@ module.exports = function (app) {
       if (err || !req.file) {
         return res.send({
           error:
-            "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 6Mo",
+            "Erreur de fichier. Celui-di doit être un PDF, et peser moins de 8Mo",
         });
       }
 
