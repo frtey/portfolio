@@ -12,8 +12,17 @@
   color: $third-color;
 }
 
-.form-container input[type="button"], select {
-  font-size: 15px;
+#count-result {
+  border: 2px solid $secondary-color;
+  background-color: rgba(65, 65, 65, 0.2);
+  padding: 2vh 2vw;
+  margin-top: 3vh;
+  backdrop-filter: blur(2px);
+}
+
+.form-container input[type="button"],
+select {
+  font-size: 1.2vw;
   font-weight: bold;
   border: none;
   border-radius: 3px;
@@ -25,13 +34,12 @@
 }
 
 #custom-file-upload {
-  margin-right: 8px;
-  font-size: 15px;
+  font-size: 1.2vw;
   font-weight: bold;
   border: none;
   border-radius: 3px;
   padding: 4px 8px;
-  background-color: $secondary-color;
+  background-color: $third-color;
   color: $primary-color;
   margin-top: 2px;
   margin-bottom: 10px;
@@ -40,7 +48,7 @@
 #issue-header {
   font-size: 3vw;
   margin-top: 3vh;
-  color: $third-color;  
+  color: $third-color;
   text-decoration: $third-color underline;
 }
 
@@ -58,13 +66,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: .6vh;
+  margin-top: 0.6vh;
 }
 
 #issue-form-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;  
+  justify-content: center;
   width: 100%;
   gap: 20px;
 }
@@ -73,12 +81,13 @@
   color: $third-color;
 }
 
-textarea, input[type="text"] {
+textarea,
+input[type="text"] {
   width: 100%;
   background-color: rgba(100, 100, 100, 0.4);
   border: 1px solid $third-color;
   color: white;
-  height: 4vh
+  height: 4vh;
 }
 
 textarea[placeholder] {
@@ -106,7 +115,7 @@ textarea:focus {
 .examples p {
   font-size: 1.8em;
   text-decoration: $third-color underline;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .examples code {
@@ -148,7 +157,7 @@ textarea:focus {
 }
 
 .grid {
-  background-color: rgba(100,100,100, 0.4);
+  background-color: rgba(100, 100, 100, 0.4);
   border-spacing: 0;
 }
 

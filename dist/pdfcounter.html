@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Import PDF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body data-barba="wrapper">
     <div id="particles-js" class="particle-canvas"></div>
@@ -19,6 +20,7 @@
           <div class="form-container">
             <form id="file-sender" enctype="multipart/form-data">
               <label for="file-upload" id="custom-file-upload">
+                <i class="far fa-folder-open fa-lg"></i>
                 Parcourir vos fichiers
               </label>
               <input id="file-upload" type="file" name="pdfFile" hidden />
@@ -31,8 +33,10 @@
             </form>
           </div>
         </div>
-        <div id='converted-result'></p>
-          <code id='jsonResult'></code>
+        <div id='count-result'></p>
+          <p id='colorResult'></p><br>
+          <p id='NbResult'></p><br>
+          <p id='totalResult'></p>
         </div>
       </section>
       <div class="footer">
