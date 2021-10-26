@@ -19,7 +19,7 @@ export default function counter() {
     var promise = new Promise(function (resolve, reject) {
       window.setTimeout(function () {
         resolve({ NBPages: 151, colorPages: 47, totalPages: 198 });
-      }, 3000);
+      }, 2000);
     });
     return promise;
   }
