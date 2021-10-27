@@ -1,3 +1,5 @@
+@import 'loader';
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -14,16 +16,14 @@
 
 #count-result {
   border: 2px solid $secondary-color;
-  background-color: rgba(65, 65, 65, 0.2);
+  background-color: rgba(30, 30, 30, 0.2);
   padding: 2vh 2vw;
   margin-top: 3vh;
-  backdrop-filter: blur(2px);
 }
 
 .form-container input[type="button"],
 select {
-  font-size: 1.2vw;
-  font-weight: bold;
+  font-size: 1vw;
   border: none;
   border-radius: 3px;
   padding: 4px 8px;
@@ -34,8 +34,7 @@ select {
 }
 
 #custom-file-upload {
-  font-size: 1.2vw;
-  font-weight: bold;
+  font-size: 1vw;
   border: none;
   border-radius: 3px;
   padding: 4px 8px;
