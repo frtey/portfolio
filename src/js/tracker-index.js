@@ -8,7 +8,7 @@ export default function tracker() {
         const created_by = document.getElementById("testForm-created_by");
         const assigned_to = document.getElementById("testForm-assigned_to");
         const status_text = document.getElementById("testForm-status_text");
-        const resultArea = document.getElementById("jsonResult");
+        const resultArea = document.getElementById("json-result");
         
         const stuff = { "issue_title": title.value, "issue_text": text.value, "created_by": created_by.value, "assigned_to": assigned_to.value, "status_text": status_text.value };
         resultArea.innerText = "";
@@ -39,7 +39,7 @@ export default function tracker() {
         const assigned_to = document.getElementById("testForm2-assigned_to");
         const status_text = document.getElementById("testForm2-status_text");
         const opened = document.getElementById("testForm2-open");
-        const resultArea = document.getElementById("jsonResult");
+        const resultArea = document.getElementById("json-result");
         
         const stuff = { "_id": _id.value, "issue_title": title.value, "issue_text": text.value, "created_by": created_by.value, "assigned_to": assigned_to.value, "status_text": status_text.value, "open": !opened.checked };
         resultArea.innerText = "";
@@ -64,7 +64,7 @@ export default function tracker() {
 
     const trackerDeleteHandler = async () => {
         const _id = document.getElementById("testForm3-_id");
-        const resultArea = document.getElementById("jsonResult");
+        const resultArea = document.getElementById("json-result");
         
         const stuff = { "_id": _id.value };
         resultArea.innerText = "";

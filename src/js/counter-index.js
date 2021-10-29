@@ -17,15 +17,6 @@ export default function counter() {
     fileSenderButton.style.marginBottom = "0vh";
   };
 
-  function mockFetch() {
-    var promise = new Promise(function (resolve, reject) {
-      window.setTimeout(function () {
-        resolve({ NBPages: 151, colorPages: 47, totalPages: 198 });
-      }, 3000);
-    });
-    return promise;
-  }
-
   const counterSubmitHandler = async () => {
     const file = document.getElementById("file-upload").files[0];
 
@@ -34,18 +25,17 @@ export default function counter() {
     const totalResultArea = document.getElementById("totalResult");
 
     Loader.open();
-    const result = await mockFetch();
-    Loader.close();
-
-    // const formData = new FormData();
-    // formData.append("pdfFile", file);
-
-    // const data = await fetch("/api/pdfupload", {
-    //   method: "POST",
-    //   body: formData,
-    // });
-
-    // const result = await data.json();
+    
+    const formData = new FormData();
+    formData.append("pdfFile", file);
+    
+    const data = await fetch("/api/pdfupload", {
+        method: "POST",
+        body: formData,
+      });
+      
+      const result = await data.json();
+      Loader.close();
 
     resultArea.style.display = "inline";
     fileSenderButton.style.display = "none";
@@ -59,8 +49,6 @@ export default function counter() {
 
     return;
   };
-
-  // EXAMPLE RESPONSE = {"NBPages":151,"colorPages":47,"totalPages":198}
 
   document
     .getElementById("file-sender-btn")

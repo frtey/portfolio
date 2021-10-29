@@ -2,8 +2,6 @@
 
 const SudokuSolver = require("../js/sudoku-solver.js");
 
-const Translator = require("../js/translator.js");
-
 const ConvertHandler = require("../js/convertHandler.js");
 
 const CounterHandler = require("../js/counterHandler.js");
@@ -72,28 +70,6 @@ module.exports = function (app) {
     }
   });
 
-  //----------------------TRADUCTION------------------------------
-
-  const translator = new Translator();
-
-  app.route("/api/translate").post((req, res) => {
-    if (req.body.text === "") {
-      res.json({ error: "No text to translate" });
-    } else if (!req.body.text || !req.body.locale) {
-      res.json({ error: "Required field(s) missing" });
-    } else {
-      let translatedText = translator.getTranslation(
-        req.body.text,
-        req.body.locale
-      );
-      if (translatedText.error) {
-        res.json(translatedText);
-      } else {
-        res.json({ text: req.body.text, translation: translatedText });
-      }
-    }
-  });
-
   //----------------------CONVERSION------------------------------
 
   const convertHandler = new ConvertHandler();
@@ -112,11 +88,11 @@ module.exports = function (app) {
     );
 
     if (initUnit === "invalid unit" && initNum === "invalid number") {
-      res.json({ error: "invalid number and unit" });
+      res.json({ error: "Quantité et unité invalides" });
     } else if (initUnit === "invalid unit") {
-      res.json({ error: "invalid unit" });
+      res.json({ error: "Unité invalide" });
     } else if (initNum === "invalid number") {
-      res.json({ error: "invalid number" });
+      res.json({ error: "Quantité invalide" });
     } else {
       res.json({
         initNum: parseFloat(initNum),

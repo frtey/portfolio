@@ -1,5 +1,4 @@
 import sudoku from "./js/sudoku-index";
-import translator from "./js/translator-index";
 import converter from "./js/converter-index";
 import tracker from "./js/tracker-index";
 import counter from "./js/counter-index";
@@ -22,12 +21,6 @@ barba.init({
       namespace: 'sudoku',
       beforeEnter(data) {
         sudoku();
-      }
-    },
-    {
-      namespace: 'translator',
-      beforeEnter(data) {
-        translator();
       }
     },
     {
