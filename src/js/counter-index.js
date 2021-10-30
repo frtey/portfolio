@@ -17,6 +17,15 @@ export default function counter() {
     fileSenderButton.style.marginBottom = "0vh";
   };
 
+  // function mockFetch() {
+  //   var promise = new Promise(function (resolve, reject) {
+  //     window.setTimeout(function () {
+  //       resolve({ colorPages: "12", NBPages: "1", totalPages: "13" });
+  //     }, 500);
+  //   });
+  //   return promise;
+  // }
+
   const counterSubmitHandler = async () => {
     const file = document.getElementById("file-upload").files[0];
 
