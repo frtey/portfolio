@@ -15,12 +15,6 @@ $third-color: #F0D126;
     url(./styles/fonts/Lato/Lato-Regular.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "Lato-Bold";
-  src: local("Lato-Bold"),
-    url(./styles/fonts/Lato/Lato-Bold.ttf) format("truetype");
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -129,21 +123,23 @@ a {
   font-size: 19px;
 }
 
-.bio b {
-  font-family: "Lato-Bold";
+#techs-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.logo-group {
-  border: $secondary-color solid 2px;
-  padding: 8px 16px;
-  border-radius: 3px;
-}
-
-.tech-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-}
+.tech-word {
+  font-family: "Karantina-Bold";
+  font-size: 45px;
+  color: #fff;
+  
+  text-shadow:
+    0 0 7px $third-color,
+    0 0 10px $secondary-color,
+    0 0 21px $secondary-color,
+    0 0 42px $secondary-color,
+  }
 
 .projects-section {
   margin-top: 15px;
