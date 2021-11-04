@@ -121,28 +121,58 @@ a {
 .bio {
   margin-bottom: 10px;
   font-size: 20px;
+  color: $third-color;
 }
 
-.first-letter {
+#tech-contact-container {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio:first-letter {
   font-size: 25px;
+  font-family: "Karantina-Bold";
+}
+
+.bio-words-container {
+  display:grid;
+  border: 1px solid $third-color;
+  border-radius: 10px;
+  padding: 10px;
+  // box-shadow:
+  //   0 0 7px #4a2807,
+  //   0 0 10px #4a2807,
+  //   0 0 21px #4a2807,
 }
 
 #techs-container {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
-.tech-word {
+#techs-container p:last-child {
+  grid-column: 2;
+}
+
+#contact-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.word {
   font-family: "Karantina-Bold";
   font-size: 45px;
-  color: #fff;
+
+}
+.glow {
+  color: $third-color;
   
   text-shadow:
-    0 0 7px $third-color,
-    0 0 10px $secondary-color,
-    0 0 21px $secondary-color,
-    0 0 42px $secondary-color,
+    0 0 7px #4a2807,
+    0 0 10px #4a2807,
+    0 0 21px #4a2807,
   }
 
 .projects-section {
