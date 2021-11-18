@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Import PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body data-barba="wrapper">
+    <div id="particles-js" class="particle-canvas"></div>
+
+    <main
+      class="container"
+      data-barba="container"
+      data-barba-namespace="sentencemaker"
+    >
+      <section class="project-body">
+        <button class="main-title">Sentence Maker</button>
+        <div class="app-container">
+          <div class="form-container">
+            <input
+              type="button"
+              value="Nouvelle phrase"
+              id="get-sentence-btn"
+            />
+          </div>
+        </div>
+        <p id="sentence"></p>
+      </section>
+      <div class="footer">
+        <a href="./projects.html" class="link-to-project"
+          >Retourner aux projets</a
+        >
+      </div>
+    </main>
+  </body>
+
+  <script src="./main.js"></script>
+</html>

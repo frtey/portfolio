@@ -2,6 +2,7 @@ import sudoku from "./js/sudoku-index";
 import converter from "./js/converter-index";
 import tracker from "./js/tracker-index";
 import counter from "./js/counter-index";
+import sentence from "./js/sentence-index";
 
 import barba from "@barba/core";
 import "./styles.scss";
@@ -18,29 +19,35 @@ particlesJS.load("particles-js", "./particles.json");
 barba.init({
   views: [
     {
-      namespace: 'sudoku',
+      namespace: "sudoku",
       beforeEnter(data) {
         sudoku();
-      }
+      },
     },
     {
-      namespace: 'converter',
+      namespace: "converter",
       beforeEnter(data) {
         converter();
-      }
+      },
     },
     {
-      namespace: 'tracker',
+      namespace: "tracker",
       beforeEnter(data) {
         tracker();
-      }
+      },
     },
     {
-      namespace: 'counter',
+      namespace: "counter",
       beforeEnter(data) {
         counter();
-      }
-    }
+      },
+    },
+    {
+      namespace: "sentencemaker",
+      beforeEnter(data) {
+        sentence();
+      },
+    },
   ],
 
   // debug: true,
@@ -50,10 +57,7 @@ barba.init({
       // sync: true,
 
       custom: ({ trigger }) => {
-        return (
-          trigger.classList &&
-          trigger.classList.contains("left-to-right")
-        );
+        return trigger.classList && trigger.classList.contains("left-to-right");
       },
 
       leave(data) {
@@ -77,10 +81,7 @@ barba.init({
       // sync: true,
 
       custom: ({ trigger }) => {
-        return (
-          trigger.classList &&
-          trigger.classList.contains("right-to-left")
-        );
+        return trigger.classList && trigger.classList.contains("right-to-left");
       },
 
       leave(data) {
@@ -104,12 +105,9 @@ barba.init({
       // sync: true,
 
       custom: ({ trigger }) => {
-        return (
-          trigger.classList &&
-          trigger.classList.contains("project-card")
-        );
+        return trigger.classList && trigger.classList.contains("project-card");
       },
-      
+
       leave(data) {
         return gsap.to(data.current.container, {
           duration: 0.4,
@@ -132,8 +130,7 @@ barba.init({
 
       custom: ({ trigger }) => {
         return (
-          trigger.classList &&
-          trigger.classList.contains("link-to-project")
+          trigger.classList && trigger.classList.contains("link-to-project")
         );
       },
 
