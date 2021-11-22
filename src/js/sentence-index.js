@@ -19,7 +19,9 @@ export default function sentence() {
 
     const result = await data.json();
 
-    sentence.innerHTML = "Nombre de pages couleurs : ";
+    console.log(result);
+
+    sentence.innerHTML = result.sentence;
 
     return;
   };

@@ -6,6 +6,8 @@ const ConvertHandler = require("../js/convertHandler.js");
 
 const CounterHandler = require("../js/counterHandler.js");
 
+const SentenceHandler = require("../js/sentenceHandler.js");
+
 const multer = require("multer");
 
 const path = require("path");
@@ -71,9 +73,9 @@ module.exports = function (app) {
   });
 
   //----------------------CONVERSION------------------------------
-
+  
   const convertHandler = new ConvertHandler();
-
+  
   app.route("/api/convert").post((req, res) => {
     let input = req.body.text;
     let initNum = convertHandler.getNum(input);
@@ -85,14 +87,14 @@ module.exports = function (app) {
       initUnit,
       returnNum,
       returnUnit
-    );
-
-    if (initUnit === "invalid unit" && initNum === "invalid number") {
-      res.json({ error: "Quantité et unité invalides" });
-    } else if (initUnit === "invalid unit") {
-      res.json({ error: "Unité invalide" });
-    } else if (initNum === "invalid number") {
-      res.json({ error: "Quantité invalide" });
+      );
+      
+      if (initUnit === "invalid unit" && initNum === "invalid number") {
+        res.json({ error: "Quantité et unité invalides" });
+      } else if (initUnit === "invalid unit") {
+        res.json({ error: "Unité invalide" });
+      } else if (initNum === "invalid number") {
+        res.json({ error: "Quantité invalide" });
     } else {
       res.json({
         initNum: parseFloat(initNum),
@@ -102,6 +104,18 @@ module.exports = function (app) {
         string: toString,
       });
     }
+  });
+  
+  //----------------------SENTENCE------------------------------
+
+  const sentenceHandler = new SentenceHandler();
+
+  app.route("/api/getSentence").get((req, res) => {
+
+    let sentence = sentenceHandler.getSentence();
+    console.log(sentence);
+
+    res.json({ sentence });
   });
 
   //----------------------TRACKER------------------------------
