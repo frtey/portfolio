@@ -113,7 +113,6 @@ module.exports = function (app) {
   app.route("/api/getSentence").get((req, res) => {
 
     let sentence = sentenceHandler.getSentence();
-    console.log(sentence);
 
     res.json({ sentence });
   });
