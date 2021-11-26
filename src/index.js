@@ -42,12 +42,6 @@ barba.init({
         counter();
       },
     },
-    {
-      namespace: "sentencemaker",
-      beforeEnter(data) {
-        sentence();
-      },
-    },
   ],
 
   // debug: true,

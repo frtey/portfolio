@@ -6,8 +6,6 @@ const ConvertHandler = require("../js/convertHandler.js");
 
 const CounterHandler = require("../js/counterHandler.js");
 
-const SentenceHandler = require("../js/sentenceHandler.js");
-
 const multer = require("multer");
 
 const path = require("path");
@@ -104,17 +102,6 @@ module.exports = function (app) {
         string: toString,
       });
     }
-  });
-  
-  //----------------------SENTENCE------------------------------
-
-  const sentenceHandler = new SentenceHandler();
-
-  app.route("/api/getSentence").get((req, res) => {
-
-    let sentence = sentenceHandler.getSentence();
-
-    res.json({ sentence });
   });
 
   //----------------------TRACKER------------------------------
